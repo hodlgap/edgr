@@ -8,3 +8,4 @@ coverage.txt
 edgr
 *.exe
 dist
+.idea/
