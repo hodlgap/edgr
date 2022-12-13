@@ -3,7 +3,7 @@
 ## `github.com/edgr/core` module
 
 ### Installation
-Supports Go v1.13+ and modules. Run the usual
+Supports Go v1.19+ and modules. Run the usual
 ```sh
 go get -u github.com/hodlgap/edgr
 ```
