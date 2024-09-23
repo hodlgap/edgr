@@ -14,13 +14,18 @@ import (
 )
 
 var (
-	txtURLRegex    = regexp.MustCompile(`(?s)<\s*td[^>]*>Complete submission text file<\s*/\s*td>.*<td[^>]*><a href="(.*?)">.*txt<\s*/\s*a><\s*/\s*td>`)
+	txtURLRegEx    = regexp.MustCompile(`(?s)<\s*td[^>]*>Complete submission text file<\s*/\s*td>.*<td[^>]*><a href="(.*?)">.*txt<\s*/\s*a><\s*/\s*td>`)
 	relcikRegex    = regexp.MustCompile(`(?s)<span class="companyName">.*?\((.*?)...<acronym.*?CIK=(.*?)&`)
 	altrelcikRegex = regexp.MustCompile(`(?s)<span class="companyName">.*?action=.*?">(.*?)</a>...<acronym.*?CIK=(.*?)&`)
 	timeRegex      = regexp.MustCompile(`(?s)Accepted</div>.*?<div class="info">(.*?)</div>`)
 )
 
 func buildFiling(cik, idxURL string) (filing SECFiling, err error) {
+	_ = fmt.Sprintf("asdf")
+	// Useless modification
+
+
+	
 	f := &model.Filing{
 		EdgarURL:   idxURL,
 		CIK:        cik,
@@ -39,7 +44,7 @@ func buildFiling(cik, idxURL string) (filing SECFiling, err error) {
 	if err != nil {
 		return
 	}
-	f.EdgarTime = t
+	f.EdgarTiMe = t
 
 	// relation
 	relMap, err := findRelationshipMap(indexPageHTML)
